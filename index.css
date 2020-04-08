@@ -95,29 +95,64 @@ figcaption time {
   padding: 5px;
 }
 .list-style {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   padding: 0;
-  padding-top: 160px;
+  padding-top: 150px;
   width: 80%;
   margin: auto;
 }
 li {
+  width: 100%;
   display: flex;
   margin: auto;
-  justify-content: space-between;
   padding-bottom: 120px;
+  justify-content: space-between;
 }
 .tribute-actual-info {
   width: 60%;
+  height: auto;
   background-color: rgb(54, 58, 58);
   transform: skew(10deg, 0deg);
   border-radius: 10px;
 }
+.outer-circle {
+  position: relative;
+  display: flex;
+}
 .circle {
-  width: 15px;
-  height: 15px;
+  display: flex;
+  width: 20px;
+  height: 20px;
   border-radius: 50%;
   background-color: rgb(164, 201, 192);
   border: 5px solid rgb(23, 139, 120);
+}
+
+.circle::after {
+  content: "";
+  position: absolute;
+  height: 10px;
+  width: 10px;
+  left: 10px;
+  top: 10px;
+  border-radius: 50%;
+  background: #ec0d0d;
+  color: rgb(31, 230, 236);
+}
+
+.circle::before {
+  content: "";
+  height: calc(100% + 126px);
+  width: 0;
+  border-left: 2px solid white;
+  position: absolute;
+  top: 24px;
+  left: 14px;
+}
+li:last-child .circle::before {
+  display: none;
 }
 
 li time {
@@ -160,7 +195,34 @@ a {
     padding-bottom: 45px;
   }
   .circle {
-    width: 10px;
-    height: 10px;
+    width: 13px;
+    height: 13px;
+    background-color: rgb(164, 201, 192);
+    border: 3px solid rgb(23, 139, 120);
+  }
+  .circle::after {
+    left: 5.5px;
+    top: 6px;
+    height: 7px;
+    width: 7px;
+  }
+
+  .circle::before {
+    content: "";
+    height: calc(100% + 54px);
+    width: 0;
+    border-left: 2px solid white;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+  }
+  li:last-child .circle::before {
+    display: none;
+  }
+  h1 {
+    font-size: 25px;
+  }
+  h3 {
+    font-size: 15px;
   }
 }
